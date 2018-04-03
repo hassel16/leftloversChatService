@@ -1,5 +1,6 @@
-package dhbw.leftlovers.service.chat.security;
+package dhbw.leftlovers.service.chat.security.filter;
 
+import dhbw.leftlovers.service.chat.security.JWTTokenProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
@@ -11,9 +12,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-class JWTTokenFilter extends GenericFilterBean {
+public class JWTTokenFilter extends GenericFilterBean {
 
-    private final JWTTokenProvider JWTTokenProvider;
+    private final dhbw.leftlovers.service.chat.security.JWTTokenProvider JWTTokenProvider;
 
     public JWTTokenFilter(JWTTokenProvider JWTTokenProvider) {
         this.JWTTokenProvider = JWTTokenProvider;

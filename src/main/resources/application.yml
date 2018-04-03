@@ -10,7 +10,7 @@ spring:
   hibernate:
    ddl-auto: validate
 server:
-  context-path: /UAAService
+  context-path: /ChatService
 endpoints:
   cors:
     allowed-origins: "*"

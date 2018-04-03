@@ -1,5 +1,7 @@
-package dhbw.leftlovers.service.chat.security;
+package dhbw.leftlovers.service.chat.security.config;
 
+import dhbw.leftlovers.service.chat.security.JWTTokenProvider;
+import dhbw.leftlovers.service.chat.security.filter.JWTTokenFilterConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,14 +15,11 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
-import static dhbw.leftlovers.service.uaa.security.SecurityConstants.LOG_IN_URL;
-import static dhbw.leftlovers.service.uaa.security.SecurityConstants.SIGN_UP_URL;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
-    private final JWTTokenProvider JWTTokenProvider;
+    private final dhbw.leftlovers.service.chat.security.JWTTokenProvider JWTTokenProvider;
 
     @Autowired
     public WebSecurity(JWTTokenProvider JWTTokenProvider) {
@@ -32,8 +31,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable().authorizeRequests();
 
         http.authorizeRequests()
-                .antMatchers(SIGN_UP_URL).permitAll()
-                .antMatchers(LOG_IN_URL).permitAll()
                 .anyRequest().authenticated();
 
         http.apply(new JWTTokenFilterConfigurer(JWTTokenProvider));
