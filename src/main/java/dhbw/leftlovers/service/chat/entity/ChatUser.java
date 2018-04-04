@@ -15,9 +15,9 @@ public class ChatUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long chatuserid;
 
-    @JoinColumn(name = "tbl_chat_chatid", nullable = false)
-    private Long chatid;
+   /* @JoinColumn(name = "tbl_chat_chatid", nullable = false)
+    private Chat chat;
 
     @JoinColumn(name = "tbl_user_userid", nullable = false)
-    private Long userid;
+    private User user;*/
 }

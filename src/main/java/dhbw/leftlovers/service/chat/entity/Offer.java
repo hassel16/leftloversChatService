@@ -16,8 +16,8 @@ public class Offer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long angebotid;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tbl_user_userid", nullable = false)
-    private Long userid;
+    private User user;
 
 }

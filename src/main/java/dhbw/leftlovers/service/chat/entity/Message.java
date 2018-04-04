@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,19 +16,18 @@ public class Message implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long nachrichtId;
+    private Long nachrichtid;
 
     @Column(name = "erfasszeitpunkt")
     private Timestamp createdAt;
 
-    @Lob
     private String text;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tbl_chat_chatid", nullable = false)
-    private Long chatid;
+    private Chat chat;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "tbl_user_userid", nullable = false)
-    private Long userid;
+    private List<User> users;
 }
