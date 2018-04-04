@@ -13,6 +13,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Chat implements Serializable {
 
+    // TODO: Ein Chat muss mehrere Nachrichten enthalten
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long chatid;

@@ -54,7 +54,7 @@ public class ChatServiceImpl implements ChatService {
     public ResponseEntity<?> createChat(Long offerId, ChatForm chatForm) {
         return this.offerService.findByOfferId(offerId)
                 .map(offer -> {
-                    Chat chat = chatService.save(new Chat(chatForm.getTitel(), offer));
+                    Chat chat = this.save(new Chat(chatForm.getTitel(), offer));
 
                     URI location = ServletUriComponentsBuilder
                             .fromCurrentRequest().path("/{id}")

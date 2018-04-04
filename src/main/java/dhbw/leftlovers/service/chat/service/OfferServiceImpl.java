@@ -4,9 +4,11 @@ import dhbw.leftlovers.service.chat.entity.Offer;
 import dhbw.leftlovers.service.chat.exception.OfferNotFoundException;
 import dhbw.leftlovers.service.chat.repository.OfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class OfferServiceImpl implements OfferService {
 
     private OfferRepository offerRepository;

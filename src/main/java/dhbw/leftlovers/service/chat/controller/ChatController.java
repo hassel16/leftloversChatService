@@ -3,7 +3,9 @@ package dhbw.leftlovers.service.chat.controller;
 import dhbw.leftlovers.service.chat.entity.Chat;
 import dhbw.leftlovers.service.chat.entity.ChatForm;
 import dhbw.leftlovers.service.chat.entity.Message;
+import dhbw.leftlovers.service.chat.entity.MessageForm;
 import dhbw.leftlovers.service.chat.service.ChatService;
+import dhbw.leftlovers.service.chat.service.MessageService;
 import dhbw.leftlovers.service.chat.service.OfferService;
 import dhbw.leftlovers.service.chat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +21,14 @@ public class ChatController {
     private UserService userService;
     private ChatService chatService;
     private OfferService offerService;
+    private MessageService messageService;
 
     @Autowired
-    public ChatController(UserService userService, ChatService chatService, OfferService offerService) {
+    public ChatController(UserService userService, ChatService chatService, OfferService offerService, MessageService messageService) {
         this.userService = userService;
         this.chatService = chatService;
         this.offerService = offerService;
+        this.messageService = messageService;
     }
 
     @GetMapping("/chats/{userId}")
@@ -38,8 +42,8 @@ public class ChatController {
     }
 
     @PostMapping("/chat/{chatId}")
-    void addMessage(@PathVariable Long chatId, @RequestBody Message message) {
-
+    ResponseEntity<?> addMessage(@PathVariable Long chatId, @RequestBody MessageForm messageForm) {
+        return messageService.createMessage(chatId, messageForm);
     }
 
     @PostMapping("/{offerId}/chat")

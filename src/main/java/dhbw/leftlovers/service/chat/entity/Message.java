@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -30,4 +31,11 @@ public class Message implements Serializable {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "tbl_user_userid", nullable = false)
     private List<User> users;
+
+    public Message(String text, Chat chat, List<User> users) {
+        this.createdAt = Timestamp.valueOf(LocalDateTime.now());
+        this.text = text;
+        this.chat = chat;
+        this.users = users;
+    }
 }
