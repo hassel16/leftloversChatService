@@ -1,6 +1,6 @@
 package dhbw.leftlovers.service.chat.security.service;
 
-import dhbw.leftlovers.service.chat.security.repository.UserRepository;
+import dhbw.leftlovers.service.chat.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

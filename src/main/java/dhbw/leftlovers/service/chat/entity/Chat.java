@@ -22,5 +22,10 @@ public class Chat implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tbl_angebot_angebotid", nullable = false)
     private Offer offer;
+
+    public Chat(String titel, Offer offer) {
+        this.titel = titel;
+        this.offer = offer;
+    }
 }
 
