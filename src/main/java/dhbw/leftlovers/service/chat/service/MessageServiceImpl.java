@@ -2,6 +2,8 @@ package dhbw.leftlovers.service.chat.service;
 
 import dhbw.leftlovers.service.chat.entity.Message;
 import dhbw.leftlovers.service.chat.entity.MessageForm;
+import dhbw.leftlovers.service.chat.entity.User;
+import dhbw.leftlovers.service.chat.exception.UserNotFoundException;
 import dhbw.leftlovers.service.chat.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,20 +16,24 @@ import java.net.URI;
 public class MessageServiceImpl implements MessageService {
 
     private MessageRepository messageRepository;
-
     private ChatService chatService;
+    private UserService userService;
 
     @Autowired
-    public MessageServiceImpl(MessageRepository messageRepository, ChatService chatService) {
+    public MessageServiceImpl(MessageRepository messageRepository, ChatService chatService, UserService userService) {
         this.messageRepository = messageRepository;
         this.chatService = chatService;
+        this.userService = userService;
     }
 
     @Override
     public ResponseEntity<?> createMessage(Long chatId, MessageForm messageForm) {
+
+        User user = userService.findByUserId(messageForm.getUserId()).orElseThrow(() -> new UserNotFoundException(messageForm.getUserId()));
+
         return this.chatService.findByChatId(chatId)
                 .map(chat -> {
-                    Message message = this.save(new Message(messageForm.getText(), chat, messageForm.getUsers()));
+                    Message message = this.save(new Message(messageForm.getText(), chat, user));
 
                     URI location = ServletUriComponentsBuilder
                             .fromCurrentRequest().path("/{id}")

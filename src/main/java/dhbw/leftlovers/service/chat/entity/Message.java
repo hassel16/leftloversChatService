@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Entity
@@ -28,14 +27,14 @@ public class Message implements Serializable {
     @JoinColumn(name = "tbl_chat_chatid", nullable = false)
     private Chat chat;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tbl_user_userid", nullable = false)
-    private List<User> users;
+    private User user;
 
-    public Message(String text, Chat chat, List<User> users) {
+    public Message(String text, Chat chat, User user) {
         this.createdAt = Timestamp.valueOf(LocalDateTime.now());
         this.text = text;
         this.chat = chat;
-        this.users = users;
+        this.user = user;
     }
 }

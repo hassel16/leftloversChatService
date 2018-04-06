@@ -11,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class ChatUser {
 
+    // TODO: Wird Entity benötigt?
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long chatuserid;
