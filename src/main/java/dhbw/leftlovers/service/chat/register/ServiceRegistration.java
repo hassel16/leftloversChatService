@@ -8,21 +8,15 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-class ServiceRegistration {
+public class ServiceRegistration {
 
-    private final Service ownService;
-
-    ServiceRegistration(String serviceName, String serviceAddress, int servicePort) {
-        this.ownService = new Service(serviceName, serviceAddress, servicePort);
-        this.registerInServiceRegister();
-    }
-
-    private void registerInServiceRegister() {
+    public static void registerInServiceRegister() {
         Gson g = new GsonBuilder().create();
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<String> entity = new HttpEntity<>(g.toJson(this.ownService, Service.class), headers);
+        Service ownService =  new Service("ChatService", "https://angebotsservice.herokuapp.com", 443);
+        HttpEntity<String> entity = new HttpEntity<>(g.toJson(ownService, Service.class), headers);
         ResponseEntity<String> response = restTemplate.postForEntity("https://leftloversgateway.azurewebsites.net/APIGateway/ServiceRegister?password=leftlovers_wwi16B3", entity, String.class);
     }
 }

@@ -2,7 +2,6 @@ package dhbw.leftlovers.service.chat.controller;
 
 import dhbw.leftlovers.service.chat.entity.Chat;
 import dhbw.leftlovers.service.chat.entity.ChatForm;
-import dhbw.leftlovers.service.chat.entity.Message;
 import dhbw.leftlovers.service.chat.entity.MessageForm;
 import dhbw.leftlovers.service.chat.service.ChatService;
 import dhbw.leftlovers.service.chat.service.MessageService;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @CrossOrigin
-@RestController
+@RestController(value = "/ChatService")
 public class ChatController {
 
     private UserService userService;

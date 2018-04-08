@@ -7,6 +7,7 @@ import dhbw.leftlovers.service.chat.repository.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -51,6 +52,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
+    @Transactional
     public ResponseEntity<?> createChat(Long offerId, ChatForm chatForm) {
         return this.offerService.findByOfferId(offerId)
                 .map(offer -> {
@@ -64,6 +66,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
+    @Transactional
     public Chat save(Chat chat) {
         return chatRepository.save(chat);
     }
