@@ -33,11 +33,10 @@ repositories {
 dependencies {
     // Spring Boot
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter')
     compile('org.springframework.boot:spring-boot-starter-actuator')
-    runtime('org.springframework.boot:spring-boot-devtools')
+    //runtime('org.springframework.boot:spring-boot-devtools')
 
 
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
@@ -55,7 +54,9 @@ dependencies {
 
     // Database
 //    runtime('com.h2database:h2')
-    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.2.3'
+   compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.2.3'
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    //compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.9-rc'
 
     // Lombok
     compileOnly('org.projectlombok:lombok')
@@ -65,5 +66,4 @@ dependencies {
 
     // Spring Boot Test
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile('org.springframework.security:spring-security-test')
 }

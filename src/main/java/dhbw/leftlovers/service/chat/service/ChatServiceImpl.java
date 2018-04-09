@@ -11,37 +11,35 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ChatServiceImpl implements ChatService {
 
     private ChatRepository chatRepository;
-    private ChatService chatService;
     private OfferService offerService;
     private UserServiceImpl userService;
 
     @Autowired
-    public ChatServiceImpl(ChatRepository chatRepository, ChatService chatService, OfferService offerService, UserServiceImpl userService) {
+    public ChatServiceImpl(ChatRepository chatRepository, OfferService offerService, UserServiceImpl userService) {
         this.chatRepository = chatRepository;
-        this.chatService = chatService;
         this.offerService = offerService;
         this.userService = userService;
     }
 
     @Override
-    public Collection<Chat> findByUserId(Long userId) {
-        return chatRepository.findByUserId(userId);
+    public List<Chat> findByUserId(Long userId) {
+        return chatRepository.findByUsers_Userid(userId);
     }
 
     @Override
     public Optional<Chat> findByChatId(Long chatId) {
-        return chatRepository.findByChatId(chatId);
+        return chatRepository.findByChatid(chatId);
     }
 
     @Override
-    public Collection<Chat> getChats(Long userId) {
+    public List<Chat> getChats(Long userId) {
         userService.validateUserId(userId);
         return this.findByUserId(userId);
     }

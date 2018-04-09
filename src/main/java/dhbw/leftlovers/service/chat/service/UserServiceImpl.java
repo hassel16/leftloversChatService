@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public void validateUserId(Long userId) {
-        this.findByUserId(userId).orElseThrow(
+        userRepository.findByUserid(userId).orElseThrow(
                 () -> new UserNotFoundException(userId));
     }
 }

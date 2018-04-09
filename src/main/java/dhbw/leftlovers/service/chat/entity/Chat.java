@@ -1,18 +1,18 @@
 package dhbw.leftlovers.service.chat.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "tbl_chat")
 @NoArgsConstructor
-public class Chat implements Serializable {
+public class Chat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,16 +20,17 @@ public class Chat implements Serializable {
 
     private String titel;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "tbl_nachricht_nachrichtid", nullable = false)
+    @OneToMany(mappedBy = "chat" , cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Message> messages;
 
     @ManyToMany
     @JoinTable(
             name = "tbl_chat_user_verbindung",
-            joinColumns = @JoinColumn(name = "tbl_chat_chatid", referencedColumnName = "chatid"),
-            inverseJoinColumns = @JoinColumn(name = "tbl_user_userid", referencedColumnName = "userid")
+            joinColumns = @JoinColumn(name = "tbl_chat_chatid"),
+            inverseJoinColumns = @JoinColumn(name = "tbl_user_userid")
     )
+    @JsonManagedReference
     private List<User> users;
 
     @ManyToOne(cascade = CascadeType.ALL)

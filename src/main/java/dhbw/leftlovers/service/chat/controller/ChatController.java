@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @CrossOrigin
-@RestController(value = "/ChatService")
+@RestController
 public class ChatController {
 
     private UserService userService;
@@ -32,7 +32,8 @@ public class ChatController {
 
     @GetMapping("/chats/{userId}")
     Collection<Chat> getChats(@PathVariable Long userId) {
-        return chatService.getChats(userId);
+        Collection<Chat> s= chatService.getChats(userId);
+        return s;
     }
 
     @GetMapping("/chat/{chatId}")
