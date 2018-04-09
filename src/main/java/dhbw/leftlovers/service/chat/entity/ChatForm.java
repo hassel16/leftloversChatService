@@ -10,4 +10,5 @@ public class ChatForm {
     String titel;
     long offerid;
     List<Long> userIds;
+    MessageForm messageform;
 }

@@ -54,6 +54,7 @@ public class ChatController {
 
     @PostMapping("/chat")
     ResponseEntity<?> createChat(@RequestBody ChatForm chatForm) {
-        return chatService.createChat(chatForm);
+        Chat cache = chatService.createChat(chatForm);
+        return messageService.createMessage(cache.getChatid(), chatForm.getMessageform());
     }
 }

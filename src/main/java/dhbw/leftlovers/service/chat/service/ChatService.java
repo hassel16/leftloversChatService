@@ -2,7 +2,6 @@ package dhbw.leftlovers.service.chat.service;
 
 import dhbw.leftlovers.service.chat.entity.Chat;
 import dhbw.leftlovers.service.chat.entity.ChatForm;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +16,7 @@ public interface ChatService {
 
     Chat getChat(Long chatId);
 
-    ResponseEntity<?> createChat(ChatForm chatForm);
+    Chat createChat(ChatForm chatForm);
 
     Chat save(Chat chat);
 

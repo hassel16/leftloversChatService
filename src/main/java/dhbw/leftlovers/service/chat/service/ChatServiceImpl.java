@@ -6,11 +6,9 @@ import dhbw.leftlovers.service.chat.entity.User;
 import dhbw.leftlovers.service.chat.exception.ChatNotFoundException;
 import dhbw.leftlovers.service.chat.repository.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -56,7 +54,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    public ResponseEntity<?> createChat(ChatForm chatForm) {
+    public Chat createChat(ChatForm chatForm) {
         return this.offerService.findByOfferId(chatForm.getOfferid())
                 .map(offer -> {
                     List<User> cacheListUser = new ArrayList<>();
@@ -65,15 +63,12 @@ public class ChatServiceImpl implements ChatService {
                     });
 
                     Chat chat = this.save(new Chat(chatForm.getTitel(), offer,cacheListUser));
-
-                    URI location = ServletUriComponentsBuilder
-                            .fromCurrentRequest().path("/{id}")
-                            .buildAndExpand(chat.getChatid()).toUri();
-                    return ResponseEntity.created(location).build();
-                }).orElse(ResponseEntity.noContent().build());
+                    return chat;
+                }).orElse(null);
     }
 
     @Override
+    @Transactional
     public Chat save(Chat chat) {
         return chatRepository.save(chat);
     }
