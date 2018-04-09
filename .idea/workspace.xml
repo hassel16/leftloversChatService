@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e95537d7-c467-4a76-8a13-377c4ff3fd8b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/controller/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/entity/ChatForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/entity/ChatForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/entity/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/entity/Offer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/register/ServiceRegistration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/register/ServiceRegistration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/service/ChatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/service/ChatService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/service/ChatServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/dhbw/leftlovers/service/chat/service/ChatServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/Offer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -52,19 +39,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChatServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="280">
+              <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="306">
               <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
             </state>
           </provider>
@@ -494,12 +481,12 @@
         <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/ChatForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java" />
         <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/MessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/Offer.java" />
         <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/Chat.java" />
         <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -772,12 +759,12 @@
       <workItem from="1523225140245" duration="3454000" />
       <workItem from="1523239397306" duration="1561000" />
       <workItem from="1523248120589" duration="107000" />
-      <workItem from="1523248519926" duration="3447000" />
+      <workItem from="1523248519926" duration="3729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15619000" />
+    <option name="totallyTimeSpent" value="15901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -793,12 +780,12 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32872504" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -806,7 +793,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39784947" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39784947" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3296582" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -824,26 +811,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="12" />
     </breakpoint-manager>
   </component>
@@ -1109,13 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -1127,20 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
@@ -1167,8 +1113,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="306">
           <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/controller/ChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dhbw/leftlovers/service/chat/service/ChatServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
         </state>
       </provider>
     </entry>

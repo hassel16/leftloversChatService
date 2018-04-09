@@ -7,6 +7,7 @@ import dhbw.leftlovers.service.chat.exception.ChatNotFoundException;
 import dhbw.leftlovers.service.chat.repository.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
+    @Transactional
     public Chat save(Chat chat) {
         return chatRepository.save(chat);
     }
