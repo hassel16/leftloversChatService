@@ -46,8 +46,14 @@ public class ChatController {
         return messageService.createMessage(chatId, messageForm);
     }
 
-    @PostMapping("/{offerId}/chat")
-    ResponseEntity<?> createChat(@RequestParam Long offerId, @RequestBody ChatForm chatForm) {
-        return chatService.createChat(offerId, chatForm);
+    @DeleteMapping("/chat/{chatId}")
+    ResponseEntity<?> addMessage(@PathVariable Long chatId) {
+        chatService.deleteChat(chatId);
+        return ResponseEntity.ok(null);
+    }
+
+    @PostMapping("/chat")
+    ResponseEntity<?> createChat(@RequestBody ChatForm chatForm) {
+        return chatService.createChat(chatForm);
     }
 }

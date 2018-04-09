@@ -17,9 +17,10 @@ public interface ChatService {
 
     Chat getChat(Long chatId);
 
-    ResponseEntity<?> createChat(Long offerId, ChatForm chatForm);
+    ResponseEntity<?> createChat(ChatForm chatForm);
 
     Chat save(Chat chat);
 
+    void deleteChat(Long chatId);
 
 }

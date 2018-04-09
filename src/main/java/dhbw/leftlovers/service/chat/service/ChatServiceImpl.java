@@ -2,15 +2,16 @@ package dhbw.leftlovers.service.chat.service;
 
 import dhbw.leftlovers.service.chat.entity.Chat;
 import dhbw.leftlovers.service.chat.entity.ChatForm;
+import dhbw.leftlovers.service.chat.entity.User;
 import dhbw.leftlovers.service.chat.exception.ChatNotFoundException;
 import dhbw.leftlovers.service.chat.repository.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,11 +51,20 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    @Transactional
-    public ResponseEntity<?> createChat(Long offerId, ChatForm chatForm) {
-        return this.offerService.findByOfferId(offerId)
+    public void deleteChat(Long chatId) {
+         chatRepository.delete(chatId);
+    }
+
+    @Override
+    public ResponseEntity<?> createChat(ChatForm chatForm) {
+        return this.offerService.findByOfferId(chatForm.getOfferid())
                 .map(offer -> {
-                    Chat chat = this.save(new Chat(chatForm.getTitel(), offer));
+                    List<User> cacheListUser = new ArrayList<>();
+                    chatForm.getUserIds().forEach(userid->{
+                        userService.findByUserId(userid).ifPresent((User user) -> cacheListUser.add(user));
+                    });
+
+                    Chat chat = this.save(new Chat(chatForm.getTitel(), offer,cacheListUser));
 
                     URI location = ServletUriComponentsBuilder
                             .fromCurrentRequest().path("/{id}")
@@ -64,7 +74,6 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    @Transactional
     public Chat save(Chat chat) {
         return chatRepository.save(chat);
     }

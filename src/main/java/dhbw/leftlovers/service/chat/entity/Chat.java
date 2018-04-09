@@ -37,9 +37,10 @@ public class Chat {
     @JoinColumn(name = "tbl_angebot_angebotid", nullable = false)
     private Offer offer;
 
-    public Chat(String titel, Offer offer) {
+    public Chat(String titel, Offer offer,List<User> users) {
         this.titel = titel;
         this.offer = offer;
+        this.users = users;
     }
 }
 

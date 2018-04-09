@@ -8,5 +8,6 @@ import java.util.List;
 public class ChatForm {
 
     String titel;
+    long offerid;
     List<Long> userIds;
 }
