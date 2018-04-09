@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
+@RequestMapping(value = "/ChatService")
 public class ChatController {
 
     private UserService userService;
@@ -55,6 +56,7 @@ public class ChatController {
     @PostMapping("/chat")
     ResponseEntity<?> createChat(@RequestBody ChatForm chatForm) {
         Chat cache = chatService.createChat(chatForm);
+
         return messageService.createMessage(cache.getChatid(), chatForm.getMessageform());
     }
 }

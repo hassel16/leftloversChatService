@@ -7,7 +7,6 @@ import dhbw.leftlovers.service.chat.exception.ChatNotFoundException;
 import dhbw.leftlovers.service.chat.repository.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,13 +61,11 @@ public class ChatServiceImpl implements ChatService {
                         userService.findByUserId(userid).ifPresent((User user) -> cacheListUser.add(user));
                     });
 
-                    Chat chat = this.save(new Chat(chatForm.getTitel(), offer,cacheListUser));
-                    return chat;
+                    return this.save(new Chat(chatForm.getTitel(), offer,cacheListUser));
                 }).orElse(null);
     }
 
     @Override
-    @Transactional
     public Chat save(Chat chat) {
         return chatRepository.save(chat);
     }

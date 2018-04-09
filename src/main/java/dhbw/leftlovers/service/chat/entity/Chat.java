@@ -30,7 +30,6 @@ public class Chat {
             joinColumns = @JoinColumn(name = "tbl_chat_chatid"),
             inverseJoinColumns = @JoinColumn(name = "tbl_user_userid")
     )
-    @JsonManagedReference
     private List<User> users;
 
     @ManyToOne(cascade = CascadeType.ALL)

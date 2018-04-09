@@ -22,7 +22,6 @@ public class User{
     private String email;
 
     @ManyToMany(mappedBy = "users")
-    @JsonBackReference
     private List<Chat> chats;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
